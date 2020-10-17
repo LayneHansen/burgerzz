@@ -1,0 +1,29 @@
+{
+  "name": "burgerzz",
+  "version": "1.0.0",
+  "description": "This application allows the user to create a burger and then indicate that they have eaten it.",
+  "main": "server.js",
+  "scripts": {
+    "test": "None"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LayneHansen/burgerzz.git"
+  },
+  "keywords": [
+    "burger",
+    "devour",
+    "eat"
+  ],
+  "author": "Layne D. Hansen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LayneHansen/burgerzz/issues"
+  },
+  "homepage": "https://github.com/LayneHansen/burgerzz#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
+}
