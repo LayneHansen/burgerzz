@@ -4,7 +4,8 @@
   "description": "This application allows the user to create a burger and then indicate that they have eaten it.",
   "main": "server.js",
   "scripts": {
-    "test": "None"
+    "test": "None",
+    "watch": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,10 @@
   },
   "homepage": "https://github.com/LayneHansen/burgerzz#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.5"
   }
 }

@@ -1,0 +1,26 @@
+var express = require("express");
+
+var PORT = process.env.PORT || 3000;
+
+var app = express();
+
+app.use(express.static("public"));
+
+// Parse the request as JSON
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Set handlebars, declaring "main" and default
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+
+// Import routes and give server access
+var routes = require("./controllers/burgers_controller.js");
+
+app.use(routes);
+
+app.listen(PORT, function () {
+    console.log("App now listening at localhost:" + PORT);
+});
+
