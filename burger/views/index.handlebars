@@ -1,13 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {{{ body }}}
+{{!-- container for png --}}
 
-{{!-- create button that will submit user input into the db --}}
-</body>
-</html>
+{{!-- container for header --}}
+
+<h1>BurgerZZ</h1>
+
+{{!-- container for burgers --}}
+
+<h3>Create a Burger</h3>
+
+<ol>
+  {{#each cats}}
+    {{#unless sleepy}}
+      {{> cats/cat-block sleep=true}}
+    {{/unless}}
+  {{/each}}
+</ol>
+
+{{!-- container for devoured burgers --}}
+
+<h3>Crushed Burgers</h3>
+
+<ol>
+  {{#each cats}}
+    {{#unless sleepy}}
+      {{> cats/cat-block sleep=true}}
+    {{/unless}}
+  {{/each}}
+</ol>
+
+{{!-- text field --}}
+
+{{!-- submit button --}}

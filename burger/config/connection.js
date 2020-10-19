@@ -1,15 +1,15 @@
 // connect to mysql
 const mysql = require("mysql");
+
 // const inquirer = require("inquirer");
 // const env = require("dotenv").config();
-// const PORT = process.env.PORT || 3306;
-// const app = express();
 
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: process.env.password,
+    password: "W@shNat$2019",
+    // password: process.env.password,
     database: "burger_db"
 });
 console.log(connection);
@@ -20,13 +20,8 @@ connection.connect(function(err) {
         console.error("error connecting: " + err.stack);
         return;
     }
-    console.log("connected as id " + connection.threadID);
+    console.log("connected as id " + connection);
 })
-
-app.listen(PORT, function () {
-    console.log("App listening on Port: " + PORT);
-});
-
 
 // export connection
 module.exports = connection;
