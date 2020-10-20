@@ -1,11 +1,5 @@
 <!--
-<ol>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ol>
+
 
 {{!-- container for devoured burgers --}}
 
