@@ -1,13 +1,4 @@
-{{!-- container for png --}}
-
-{{!-- container for header --}}
-
-<h1>BurgerZZ</h1>
-
-{{!-- container for burgers --}}
-
-<h3>Create a Burger</h3>
-
+<!--
 <ol>
   {{#each cats}}
     {{#unless sleepy}}
@@ -21,13 +12,17 @@
 <h3>Crushed Burgers</h3>
 
 <ol>
-  {{#each cats}}
+  {{#each burgers}}
     {{#unless sleepy}}
       {{> cats/cat-block sleep=true}}
     {{/unless}}
   {{/each}}
 </ol>
 
+--!>
+
 {{!-- text field --}}
 
 {{!-- submit button --}}
+
+{{!-- div for p tag --}}
