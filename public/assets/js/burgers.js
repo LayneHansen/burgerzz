@@ -3,18 +3,19 @@
   // adds Crush button
 
 $(function () {
-  $(".create-form").on("submit", function(event) {
+  $("#submit").on("submit", function(event) {
     event.preventDefault();
 
     var newBurger = {
       name: $("burger-text").val().trim(),
     };
 
-    $.ajax("api/burgers", {
+    $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger
     })
     .then(function () {
+      console.log(newBurger);
       console.log("Created new burger");
       location.reload();
     });
