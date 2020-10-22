@@ -3,29 +3,27 @@
   // adds Crush button
 
 $(function () {
-  $("#submit").on("submit", function(event) {
+  $("#submit").on("click", function(event) {
     event.preventDefault();
-    var id = $(this).data("id");
-    var newBurger = $(this).data("burger-text");
-
-    var newBurgerMade = {
-      name: $("burger-text").val().trim(),
+    // var id = $(this).data("id");
+    var newBurger = {
+    name: $("#burger-text").val().trim(),
     };
     
-    $.ajax("/api/cats/" + id {
-      type: "PUT",
-      data: newBurgerMade
-    }).then(
+    $.ajax("/api/burgers/", {
+      type: "POST",
+      data: newBurger
+    }).done(
       function() {
         console.log("Created new burger", newBurger);
         // Reload the page to get the updated list
         location.reload();
       }
       );
-    });
+  });
     
   //   $.ajax("/api/burgers", {
-  //     type: "POST",
+  //     type: "PUT",
   //     data: newBurger
   //   })
   //   .then(function () {
