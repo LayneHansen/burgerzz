@@ -5,11 +5,9 @@
 $(function () {
   $("#submit").on("click", function(event) {
     event.preventDefault();
-    // var id = $(this).data("id");
     var newBurger = {
-    name: $("#burger-text").val().trim(),
+    reqBurger: $("#burger-text").val().trim(),
     };
-    
     $.ajax("/api/burgers/", {
       type: "POST",
       data: newBurger
@@ -21,6 +19,15 @@ $(function () {
       }
       );
   });
+
+    $("#crush-burger").on("click", function(event) {
+      var id = $(this).data("id");
+      var newBurger = $(this).data("newBurger");
+      console.log(newBurger);
+      // var crushedBurger = {
+      //   devoured: newBurger
+      // }
+    })
     
   //   $.ajax("/api/burgers", {
   //     type: "PUT",

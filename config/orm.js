@@ -44,11 +44,11 @@ var orm = {
     // queryString += 0;
     // queryString += ") ";
 
-    var queryString = `INSERT INTO burgers (name, devoured) VALUES ("western", 0)`;
+    var queryString = `INSERT INTO burgers (name, devoured) VALUES (?, 0)`;
 
     console.log(queryString);
 
-    connection.query(queryString, vals, function (err, result) {
+    connection.query(queryString, vals[0], function (err, result) {
       if (err) {
         throw err;
       }
