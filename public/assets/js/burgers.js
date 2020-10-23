@@ -1,44 +1,61 @@
 // Create a new burger
-  // adds to list
-  // adds Crush button
+// adds to list
+// adds Crush button
 
 $(function () {
-  $("#submit").on("click", function(event) {
+  $("#submit").on("click", function (event) {
     event.preventDefault();
     var newBurger = {
-    reqBurger: $("#burger-text").val().trim(),
+      reqBurger: $("#burger-text").val().trim(),
     };
     $.ajax("/api/burgers/", {
       type: "POST",
       data: newBurger
     }).done(
-      function() {
+      function () {
         console.log("Created new burger", newBurger);
         // Reload the page to get the updated list
         location.reload();
       }
-      );
+    );
   });
 
-    $("#crush-burger").on("click", function(event) {
-      var id = $(this).data("id");
-      var newBurger = $(this).data("newBurger");
-      console.log(newBurger);
-      // var crushedBurger = {
-      //   devoured: newBurger
-      // }
+  $("#crush-burger").on("click", function (event) {
+    var id = $(this).data("id");
+    var newBurger = $(this).data("newBurger");
+    console.log(newBurger, id);
+    var crushedBurger = {
+      devoured: newBurger
+    }
+    console.log("crushed");
+    $.ajax("/api/burgers/" + id, {
+      type: "PUT",
+      data: crushedBurger
     })
-    
-  //   $.ajax("/api/burgers", {
-  //     type: "PUT",
-  //     data: newBurger
+    console.log("crushed again")
+      .done(function () {
+        console.log(newBurger);
+        console.log("Crushed burger");
+        location.reload();
+      });
+  });
+
+  // $(".delete-cat").on("click", function(event) {
+  //   var id = $(this).data("id");
+
+  //   // Send the DELETE request.
+  //   $.ajax("/api/cats/" + id, {
+  //     type: "DELETE"
   //   })
-  //   .then(function () {
-  //     console.log(newBurger);
-  //     console.log("Created new burger");
-  //     location.reload();
-  //   });
+  //   .done(
+  //     function() {
+  //       console.log("deleted burger", id);
+  //       // Reload the page to get the updated list
+  //       location.reload();
+  //     }
+  //   );
   // });
+
 });
 
 // 

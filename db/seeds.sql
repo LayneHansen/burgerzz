@@ -1,5 +1,5 @@
 INSERT INTO burgers (name)
 VALUES 
-("hamburger", true),
-("cheeseburger", true),
-("bacon burger", true);
+("hamburger", false),
+("cheeseburger", false),
+("bacon burger", false);
