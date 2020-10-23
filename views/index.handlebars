@@ -36,8 +36,8 @@
           {{#unless devoured}}
             <li>
             {{this.name}}
-            <button class="submit" id="crush-burger">
-              {{#if devoured}}YUM!{{else}}CRUSH!{{/if}}
+            <button type="submit" data-id="{{this.id}}" class="crush-burger">
+              CRUSH!
             </button>
             </li>
           {{/unless}}
@@ -48,7 +48,13 @@
 
     <div class="col-md-6">
       <h3>Crushed Burgers</h3>
-      {{name}}
+      {{#each burgers}}
+          {{#if devoured}}
+            <li>
+            {{this.name}}
+            </li>
+          {{/if}}
+        {{/each}}
     </div>
 
       
