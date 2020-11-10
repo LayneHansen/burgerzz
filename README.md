@@ -11,7 +11,7 @@
 * [License](#license)
 * [Questions](#questions)
 
-![burgerzz screenshot]()
+![burgerzz screenshot](./public/assets/images/burgerzz_screenshot.png)
 
 ## URL
 
